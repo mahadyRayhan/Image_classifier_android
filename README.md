@@ -19,4 +19,19 @@ NOTE: One important thing worth to mention, "ImageDataGenerator" does not produc
 
 I train the model for just 50 epochs and got around 90% accuracy.
 
-The daraset, training script (train.py), model testing script (predict.py) and the model convertion script (convert_to_tflight.py) can be found in <strong>"TensorImageClassification/app/src/main/ML_materials/food_veg_classification/"</strong> directory
+The daraset, training script (train.py), model testing script (predict.py) and the model convertion script (convert_to_tflight.py) can be found in <strong>"TensorImageClassification/app/src/main/ML_materials/"</strong> directory
+
+## Convert tensorflow model to tflight
+
+Converting a Tensorflow model to tflight format is very simple. 
+Just load the model using:
+>tensorflow.keras.models.load_model(saved_model_dir)
+
+Initialize the converter using:
+>tensorflow.lite.TFLiteConverter.from_keras_model(model)
+
+Then convert the model using the initialized converter.
+
+## Develop the android app
+
+You can generate the 
