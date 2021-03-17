@@ -58,3 +58,4 @@ And here is how my prediction looks like:
 3. recognizeImage
 > This function classify the image and return the best prediction
 
+Check the <strong>"ImageClassifier.java"</strong> file. You can get more comments, which may help you more.
