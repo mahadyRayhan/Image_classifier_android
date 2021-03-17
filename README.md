@@ -1,4 +1,4 @@
-# Image Classification Android App Using Tensorflow
+# Image Classification Android App (Java) Using Tensorflow
 
 The objective of this project is to classify an image taken by the phone camera. But as the model file is very big and can not be uploaded in Github, i also describe the process of training the image classification model here.
 
@@ -23,7 +23,7 @@ The daraset, training script (train.py), model testing script (predict.py) and t
 
 ## Convert tensorflow model to tflight
 
-Converting a Tensorflow model to tflight format is very simple. 
+Converting a Tensorflow model to tflite format is very simple.
 Just load the model using:
 >tensorflow.keras.models.load_model(saved_model_dir)
 
@@ -34,4 +34,27 @@ Then convert the model using the initialized converter.
 
 ## Develop the android app
 
-You can generate the 
+### UI
+
+This is a single-page application. You can create your own UI as you like. My UI is very simple.
+Here is the home page:
+
+<img src="app/src/main/ML_materials/UI/home.jpg" width="50%">
+
+And here is how my prediction looks like:
+
+<img src="app/src/main/ML_materials/UI/classification.jpg" width="50%">
+
+### Java Code Segment
+
+<strong>ImageClassifier.java</strong> file performs all the image classifications related takes. The three main functions are:
+
+1.  ImageClassifier
+> This function loads the Tensorflow model (converted in tflite) and the Label
+
+2. loadImage
+> This function loads the image taken by the phone camera and performs necessary preprocessing steps.
+
+3. recognizeImage
+> This function classify the image and return the best prediction
+
